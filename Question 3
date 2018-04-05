@@ -1,0 +1,40 @@
+ssh -i 44773609_ACST890_s1_2018.pem ubuntu@ec2-13-211-123-238.ap-southeast-2.compute.amazonaws.com
+vi fibonacci.sh
+
+#################content of fibonacci.sh#############################
+#!/bin/bash
+
+#Scrit Starts Here#
+#use iterative method#
+
+#Define n, n must be a positive integer.
+if [ $# -eq 1 ]
+then
+    Num=$1
+else
+    echo -n "Enter a Number :"
+    read Num
+fi
+
+#set the first two elements of the Fibonacci sequence.
+f1=1
+f2=1
+
+echo "The Fibonacci sequence for the number $Num is : "
+
+for (( i=1;i<=Num;i++ ))
+do
+     echo -n "$f1 "
+     fn=$((f1+f2))
+     f1=$f2
+     f2=$fn
+done
+
+echo
+
+#################content of fibonacci.sh#############################
+
+chmod +x fibonacci.sh
+./fibonacci.sh 1
+./fibonacci.sh 5
+./fibonacci.sh 10
