@@ -1,4 +1,7 @@
+#login in the own AWS account
 ssh -i 44773609_ACST890_s1_2018.pem ubuntu@ec2-13-211-123-238.ap-southeast-2.compute.amazonaws.com
+
+#construct a shell script named as fibonacci.sh
 vi fibonacci.sh
 
 #################content of fibonacci.sh#############################
@@ -34,7 +37,10 @@ echo
 
 #################content of fibonacci.sh#############################
 
+#change the file mode of fibonacci.sh
 chmod +x fibonacci.sh
+
+#output
 ./fibonacci.sh 1
 ./fibonacci.sh 5
 ./fibonacci.sh 10
